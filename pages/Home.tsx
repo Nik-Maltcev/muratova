@@ -43,20 +43,13 @@ export const Home: React.FC = () => {
                  {/* Decorative Frame - Adjusted to be subtle behind the subject */}
                  <div className="absolute top-10 right-10 w-full h-full border-[10px] border-[#fcf9f2] -z-10 hidden md:block rounded-full opacity-50"></div>
                  
-                 {/* 
-                     USER INSTRUCTION:
-                     1. Save your photo as 'muratova.jpg' (or png).
-                     2. Place it in the 'public' folder of your project.
-                     3. The src below assumes the file is at the root of the public folder.
-                 */}
                  <img 
-                  src="https://placehold.co/800x1000/ffffff/c6964a?text=ВАШЕ+ФОТО+ЗДЕСЬ+(muratova.jpg)" 
+                  src="/muratova.jpg" 
                   alt="Муратова Надежда Дмитриевна" 
                   className="relative z-10 w-full max-w-[400px] lg:max-w-[500px] object-contain h-auto"
                   style={{ 
                     filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.05))" 
                   }}
-                  // After you add the file, change the src above to: src="/muratova.jpg"
                 />
                </div>
             </div>
