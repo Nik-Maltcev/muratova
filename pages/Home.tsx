@@ -44,7 +44,7 @@ export const Home: React.FC = () => {
                  <div className="absolute top-10 right-10 w-full h-full border-[10px] border-[#fcf9f2] -z-10 hidden md:block rounded-full opacity-50"></div>
                  
                  <img 
-                  src="/muratova.jpg" 
+                  src="/muratova-hero.jpg" 
                   alt="Муратова Надежда Дмитриевна" 
                   className="relative z-10 w-full max-w-[400px] lg:max-w-[500px] object-contain h-auto"
                   style={{ 
