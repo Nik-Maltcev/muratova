@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowRight, Briefcase, Users, Scale, Globe, FileText, Landmark, GraduationCap, X } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { ArrowRight, ArrowLeft, Briefcase, Users, Scale, Globe, FileText, Landmark, GraduationCap, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface Lawyer {
@@ -152,6 +152,17 @@ const lawyers: Lawyer[] = [
 
 export const Home: React.FC = () => {
   const [selectedLawyer, setSelectedLawyer] = useState<Lawyer | null>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scrollCarousel = (direction: 'left' | 'right') => {
+    if (carouselRef.current) {
+      const scrollAmount = 320; // примерная ширина карточки + gap
+      carouselRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <div className="animate-fade-in font-sans text-stone-900">
@@ -444,7 +455,27 @@ export const Home: React.FC = () => {
         
         {/* Carousel Container */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          {/* Left Arrow */}
+          <button 
+            onClick={() => scrollCarousel('left')}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-[#c6964a] text-white rounded-full flex items-center justify-center hover:bg-white hover:text-[#c6964a] transition-colors shadow-lg hidden md:flex"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          
+          {/* Right Arrow */}
+          <button 
+            onClick={() => scrollCarousel('right')}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-[#c6964a] text-white rounded-full flex items-center justify-center hover:bg-white hover:text-[#c6964a] transition-colors shadow-lg hidden md:flex"
+          >
+            <ChevronRight size={24} />
+          </button>
+
+          <div 
+            ref={carouselRef}
+            className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide mx-8 md:mx-16" 
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
             {lawyers.map((lawyer) => (
               <div key={lawyer.id} className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a] flex-shrink-0 w-[calc(33.333%-1rem)] min-w-[280px] snap-start">
                 <div className="mb-6 overflow-hidden aspect-[3/4] w-full bg-stone-800">
@@ -472,8 +503,8 @@ export const Home: React.FC = () => {
             ))}
           </div>
           
-          {/* Scroll hint */}
-          <div className="flex justify-center mt-4 gap-2">
+          {/* Scroll hint - mobile only */}
+          <div className="flex justify-center mt-4 gap-2 md:hidden">
             <span className="text-stone-500 text-xs">← Листайте →</span>
           </div>
         </div>
