@@ -29,26 +29,13 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             
             {/* Logo */}
             <Link to="/" className="flex flex-col items-center group shrink-0 py-2">
-              <div className="flex items-center gap-6 mb-3">
-                 {/* M */}
-                 <span className="font-sans text-5xl text-[#c6964a] font-light leading-none">M</span>
-                 
-                 {/* Vertical Bars Graphic */}
-                 <div className="flex gap-2 h-14 items-center px-2">
-                    <div className="w-[3px] h-full bg-[#c6964a]"></div>
-                    <div className="w-[3px] h-[70%] bg-[#c6964a]"></div>
-                    <div className="w-[3px] h-full bg-[#c6964a]"></div>
-                 </div>
-
-                 {/* N */}
-                 <span className="font-sans text-5xl text-[#c6964a] font-light leading-none">N</span>
-              </div>
-              
-              {/* Bottom Text */}
-              <div className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] text-stone-900 leading-none font-medium text-center w-full flex justify-between gap-2">
-                <span>МУРАТОВА</span>
-                <span className="text-stone-900">И</span>
-                <span>ПАРТНЁРЫ</span>
+              <img 
+                src="/logo.png" 
+                alt="Муратова и Партнёры" 
+                className="h-16 md:h-20 w-auto object-contain"
+              />
+              <div className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] text-stone-900 leading-none font-medium text-center mt-2">
+                МУРАТОВА И ПАРТНЁРЫ
               </div>
             </Link>
 
@@ -130,16 +117,12 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             {/* Column 1 */}
             <div>
                <div className="mb-6 flex flex-col items-start">
-                 <div className="flex items-center gap-3 mb-2">
-                    <span className="font-sans text-2xl text-[#c6964a] font-light leading-none">M</span>
-                    <div className="flex gap-1 h-6 items-center px-0.5">
-                        <div className="w-[1px] h-full bg-[#c6964a]"></div>
-                        <div className="w-[1px] h-3/5 bg-[#c6964a]"></div>
-                        <div className="w-[1px] h-full bg-[#c6964a]"></div>
-                    </div>
-                    <span className="font-sans text-2xl text-[#c6964a] font-light leading-none">N</span>
-                 </div>
-                 <p className="text-[10px] uppercase tracking-widest font-bold pl-0.5">Муратова и партнеры</p>
+                 <img 
+                   src="/logo.png" 
+                   alt="Муратова и Партнёры" 
+                   className="h-12 w-auto object-contain mb-2"
+                 />
+                 <p className="text-[10px] uppercase tracking-widest font-bold">Муратова и партнеры</p>
                </div>
             </div>
 
