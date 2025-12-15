@@ -18,6 +18,7 @@ const publications: Publication[] = [
     journal: 'Адвокат Татарстана',
     year: '2023',
     description: 'Декабрь 2022, январь, февраль 2023',
+    coverUrl: 'https://drive.google.com/thumbnail?id=1tQpE-8XLqGtR7jrTBFK9sfB3Zq57LK0m&sz=w400',
     pdfLink: 'https://drive.google.com/file/d/1tQpE-8XLqGtR7jrTBFK9sfB3Zq57LK0m/preview'
   },
   {
@@ -26,6 +27,7 @@ const publications: Publication[] = [
     journal: 'Адвокат Татарстана',
     year: '2023',
     description: 'Март, апрель, май 2023',
+    coverUrl: 'https://drive.google.com/thumbnail?id=1Q0XjO61ZKjZrFpK4aI63au6UzRfiOrcD&sz=w400',
     pdfLink: 'https://drive.google.com/file/d/1Q0XjO61ZKjZrFpK4aI63au6UzRfiOrcD/preview'
   },
   {
@@ -34,6 +36,7 @@ const publications: Publication[] = [
     journal: 'Адвокат Татарстана',
     year: '2023',
     description: 'Июнь, июль, август 2023',
+    coverUrl: 'https://drive.google.com/thumbnail?id=1KJ3po-_3S3uklBdW4qWZi2OlkYxg72rc&sz=w400',
     pdfLink: 'https://drive.google.com/file/d/1KJ3po-_3S3uklBdW4qWZi2OlkYxg72rc/preview'
   },
   {
@@ -42,6 +45,7 @@ const publications: Publication[] = [
     journal: 'Адвокат Татарстана',
     year: '2023',
     description: 'Сентябрь, октябрь, ноябрь 2023',
+    coverUrl: 'https://drive.google.com/thumbnail?id=17WJ0FK6ITE_0Yd3Kx5FzS721W97clQ5U&sz=w400',
     pdfLink: 'https://drive.google.com/file/d/17WJ0FK6ITE_0Yd3Kx5FzS721W97clQ5U/preview'
   }
 ];
