@@ -281,8 +281,8 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* TEAM SECTION */}
-      <section className="py-24 bg-[#1a1a1a] text-white">
+      {/* TEAM SECTION - Carousel */}
+      <section className="py-24 bg-[#1a1a1a] text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <h2 className="font-serif text-4xl text-white leading-tight">
@@ -290,69 +290,140 @@ export const Home: React.FC = () => {
             </h2>
             <div className="h-px bg-stone-700 flex-grow mx-8 hidden md:block mb-4"></div>
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
+        </div>
+        
+        {/* Carousel Container */}
+        <div className="relative">
+          <div className="flex gap-6 overflow-x-auto pb-8 px-4 sm:px-6 lg:px-8 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            
             {/* Lawyer 1 */}
-            <div className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a]">
-               <div className="mb-6 overflow-hidden aspect-[3/4] w-full">
+            <div className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a] flex-shrink-0 w-[300px] snap-start">
+               <div className="mb-6 overflow-hidden aspect-[3/4] w-full bg-stone-800">
                   <img 
-                    src="https://placehold.co/600x800/333333/ffffff?text=Фото+1" 
+                    src="/team/muratova.jpg" 
                     alt="МУРАТОВА НАДЕЖДА ДМИТРИЕВНА" 
                     className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                    onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x800/333333/c6964a?text=Н.Д.'; }}
                   />
                </div>
                <div className="text-left">
-                  <h3 className="font-serif text-lg font-bold uppercase mb-2 text-[#c6964a]">МУРАТОВА НАДЕЖДА ДМИТРИЕВНА</h3>
+                  <h3 className="font-serif text-base font-bold uppercase mb-2 text-[#c6964a]">МУРАТОВА НАДЕЖДА ДМИТРИЕВНА</h3>
                   <p className="text-xs font-bold text-stone-400 mb-4">Адвокат, Управляющий партнер</p>
-                  <p className="text-xs text-stone-400 mb-6 leading-relaxed border-t border-stone-700 pt-4">
+                  <p className="text-xs text-stone-400 leading-relaxed border-t border-stone-700 pt-4">
                     Специализация: Семейные споры, защита прав юридических лиц при проведении проверок государственными (муниципальными) органами, дела об административных правонарушениях.
                   </p>
                </div>
             </div>
 
-             {/* Lawyer 2 */}
-            <div className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a]">
-               <div className="mb-6 overflow-hidden aspect-[3/4] w-full">
+            {/* Lawyer 2 */}
+            <div className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a] flex-shrink-0 w-[300px] snap-start">
+               <div className="mb-6 overflow-hidden aspect-[3/4] w-full bg-stone-800">
                   <img 
-                    src="https://placehold.co/600x800/333333/ffffff?text=Фото+2" 
+                    src="/team/hasanshina.jpg" 
                     alt="ХАСАНШИНА РЕГИНА ГАЙФУЛОВНА" 
                     className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                    onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x800/333333/c6964a?text=Р.Г.'; }}
                   />
                </div>
                <div className="text-left">
-                  <h3 className="font-serif text-lg font-bold uppercase mb-2 text-[#c6964a]">ХАСАНШИНА РЕГИНА ГАЙФУЛОВНА</h3>
+                  <h3 className="font-serif text-base font-bold uppercase mb-2 text-[#c6964a]">ХАСАНШИНА РЕГИНА ГАЙФУЛОВНА</h3>
                   <p className="text-xs font-bold text-stone-400 mb-4">Адвокат, Партнер</p>
-                  <p className="text-xs text-stone-400 mb-6 leading-relaxed border-t border-stone-700 pt-4">
+                  <p className="text-xs text-stone-400 leading-relaxed border-t border-stone-700 pt-4">
                     Специализация: Земельные споры, наследственные споры, защита прав потерпевших.
                   </p>
                </div>
             </div>
 
-             {/* Lawyer 3 */}
-            <div className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a]">
-               <div className="mb-6 overflow-hidden aspect-[3/4] w-full">
+            {/* Lawyer 3 */}
+            <div className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a] flex-shrink-0 w-[300px] snap-start">
+               <div className="mb-6 overflow-hidden aspect-[3/4] w-full bg-stone-800">
                   <img 
-                    src="https://placehold.co/600x800/333333/ffffff?text=Фото+3" 
+                    src="/team/husnullina.jpg" 
                     alt="ХУСНУЛЛИНА ДИАНА ФАИЛЕВНА" 
                     className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                    onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x800/333333/c6964a?text=Д.Ф.'; }}
                   />
                </div>
                <div className="text-left">
-                  <h3 className="font-serif text-lg font-bold uppercase mb-2 text-[#c6964a]">ХУСНУЛЛИНА ДИАНА ФАИЛЕВНА</h3>
+                  <h3 className="font-serif text-base font-bold uppercase mb-2 text-[#c6964a]">ХУСНУЛЛИНА ДИАНА ФАИЛЕВНА</h3>
                   <p className="text-xs font-bold text-stone-400 mb-4">Адвокат, Партнер</p>
-                  <p className="text-xs text-stone-400 mb-6 leading-relaxed border-t border-stone-700 pt-4">
+                  <p className="text-xs text-stone-400 leading-relaxed border-t border-stone-700 pt-4">
                     Специализация: Семейные споры, жилищные споры, споры о защите прав потребителей, споры с кредитными организациями.
+                  </p>
+               </div>
+            </div>
+
+            {/* Lawyer 4 */}
+            <div className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a] flex-shrink-0 w-[300px] snap-start">
+               <div className="mb-6 overflow-hidden aspect-[3/4] w-full bg-stone-800">
+                  <img 
+                    src="/team/zhelezova.jpg" 
+                    alt="ЖЕЛЕЗОВА ВЛАДА ВЛАДИМИРОВНА" 
+                    className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                    onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x800/333333/c6964a?text=В.В.'; }}
+                  />
+               </div>
+               <div className="text-left">
+                  <h3 className="font-serif text-base font-bold uppercase mb-2 text-[#c6964a]">ЖЕЛЕЗОВА ВЛАДА ВЛАДИМИРОВНА</h3>
+                  <p className="text-xs font-bold text-stone-400 mb-4">Адвокат, Партнер</p>
+                  <p className="text-xs text-stone-400 leading-relaxed border-t border-stone-700 pt-4">
+                    Специализация: Арбитражные споры, возникающие из договоров аренды, подряда, поставки, лизинга, страховые споры, трудовые споры.
+                  </p>
+               </div>
+            </div>
+
+            {/* Lawyer 5 */}
+            <div className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a] flex-shrink-0 w-[300px] snap-start">
+               <div className="mb-6 overflow-hidden aspect-[3/4] w-full bg-stone-800">
+                  <img 
+                    src="/team/sverigina.jpg" 
+                    alt="СВЕРИГИНА РЭНАТА РАШИТОВНА" 
+                    className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                    onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x800/333333/c6964a?text=Р.Р.'; }}
+                  />
+               </div>
+               <div className="text-left">
+                  <h3 className="font-serif text-base font-bold uppercase mb-2 text-[#c6964a]">СВЕРИГИНА РЭНАТА РАШИТОВНА</h3>
+                  <p className="text-xs font-bold text-stone-400 mb-4">Адвокат, Партнер</p>
+                  <p className="text-xs text-stone-400 leading-relaxed border-t border-stone-700 pt-4">
+                    Специализация: Налоговые споры.
+                  </p>
+               </div>
+            </div>
+
+            {/* Lawyer 6 */}
+            <div className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a] flex-shrink-0 w-[300px] snap-start">
+               <div className="mb-6 overflow-hidden aspect-[3/4] w-full bg-stone-800">
+                  <img 
+                    src="/team/gataullin.jpg" 
+                    alt="ГАТАУЛЛИН АЙРАТ МАРАТОВИЧ" 
+                    className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                    onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x800/333333/c6964a?text=А.М.'; }}
+                  />
+               </div>
+               <div className="text-left">
+                  <h3 className="font-serif text-base font-bold uppercase mb-2 text-[#c6964a]">ГАТАУЛЛИН АЙРАТ МАРАТОВИЧ</h3>
+                  <p className="text-xs font-bold text-stone-400 mb-4">Адвокат, Партнер</p>
+                  <p className="text-xs text-stone-400 leading-relaxed border-t border-stone-700 pt-4">
+                    Специализация: Банкротство юридических и физических лиц.
                   </p>
                </div>
             </div>
 
           </div>
           
-           <div className="flex justify-between items-center mt-12">
-             <Link to="/contacts" className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#c6964a] hover:text-white transition-colors">
-               Вся команда <ArrowRight size={16}/>
-             </Link>
-           </div>
+          {/* Scroll hint */}
+          <div className="flex justify-center mt-4 gap-2">
+            <span className="text-stone-500 text-xs">← Листайте →</span>
+          </div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center mt-8">
+            <Link to="/contacts" className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#c6964a] hover:text-white transition-colors">
+              Контакты <ArrowRight size={16}/>
+            </Link>
+          </div>
         </div>
       </section>
 
