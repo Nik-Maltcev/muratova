@@ -1,8 +1,88 @@
-import React from 'react';
-import { ArrowRight, Briefcase, Users, Scale, Globe, FileText, Landmark, GraduationCap } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Briefcase, Users, Scale, Globe, FileText, Landmark, GraduationCap, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+interface Lawyer {
+  id: string;
+  name: string;
+  position: string;
+  specialization: string;
+  photo: string;
+  fullBio: string;
+}
+
+const lawyers: Lawyer[] = [
+  {
+    id: '1',
+    name: 'МУРАТОВА НАДЕЖДА ДМИТРИЕВНА',
+    position: 'Адвокат, Управляющий партнер',
+    specialization: 'Семейные споры, защита прав юридических лиц при проведении проверок государственными (муниципальными) органами, дела об административных правонарушениях.',
+    photo: '/team/muratova.jpg',
+    fullBio: `Кандидат юридических наук
+Медиатор
+Докторант ФГАО УВО «Национальный исследовательский университет «Высшая школа экономики» (НИУ ВШЭ) на соискание профессиональной степени Доктора юридического администрирования /Doctor of Legal Administration/
+
+В 2005 г. закончила с отличием юридический факультет Казанского государственного университета им. В.И. Ульянова-Ленина, награждена медалью: 100 лучших выпускников.
+
+В 2007 г. завершила обучение на факультете журналистики, социологии и психологии Казанского государственного университета им. В.И. Ульянова-Ленина и получила второе высшее образование по специальности журналистика.
+
+В 2008 г. завершила обучение в аспирантуре по очной форме обучения в Московской государственной юридической академии им. О. Е. Кутафина (МГЮА, г. Москва) по специальности 12.00.09 (уголовный процесс, криминалистика и судебная экспертиза; оперативно-розыскная деятельность).
+
+В 2009 г. защитила диссертацию на соискание ученой степени кандидата юридических наук в Академии экономической безопасности МВД РФ.
+
+Тема кандидатской диссертации «Процессуальные акты адвоката в уголовном судопроизводстве».
+
+Является автором научных публикаций и монографий.
+
+Специализация адвоката — защита прав юридических лиц в судах по экономическим, административным спорам, защита при проведении проверок государственными и муниципальными органами, международные гражданские и семейные споры.
+
+Стаж работы по юридической специальности с 2002 года (более 20 лет).`
+  },
+  {
+    id: '2',
+    name: 'ХАСАНШИНА РЕГИНА ГАЙФУЛОВНА',
+    position: 'Адвокат, Партнер',
+    specialization: 'Земельные споры, наследственные споры, защита прав потерпевших.',
+    photo: '/team/hasanshina.jpg',
+    fullBio: 'Специализация: Земельные споры, наследственные споры, защита прав потерпевших.'
+  },
+  {
+    id: '3',
+    name: 'ХУСНУЛЛИНА ДИАНА ФАИЛЕВНА',
+    position: 'Адвокат, Партнер',
+    specialization: 'Семейные споры, жилищные споры, споры о защите прав потребителей, споры с кредитными организациями.',
+    photo: '/team/husnullina.jpg',
+    fullBio: 'Специализация: Семейные споры, жилищные споры, споры о защите прав потребителей, споры с кредитными организациями.'
+  },
+  {
+    id: '4',
+    name: 'ЖЕЛЕЗОВА ВЛАДА ВЛАДИМИРОВНА',
+    position: 'Адвокат, Партнер',
+    specialization: 'Арбитражные споры, возникающие из договоров аренды, подряда, поставки, лизинга, страховые споры, трудовые споры.',
+    photo: '/team/zhelezova.jpg',
+    fullBio: 'Специализация: Арбитражные споры, возникающие из договоров аренды, подряда, поставки, лизинга, страховые споры, трудовые споры.'
+  },
+  {
+    id: '5',
+    name: 'СВЕРИГИНА РЭНАТА РАШИТОВНА',
+    position: 'Адвокат, Партнер',
+    specialization: 'Налоговые споры.',
+    photo: '/team/sverigina.jpg',
+    fullBio: 'Специализация: Налоговые споры.'
+  },
+  {
+    id: '6',
+    name: 'ГАТАУЛЛИН АЙРАТ МАРАТОВИЧ',
+    position: 'Адвокат, Партнер',
+    specialization: 'Банкротство юридических и физических лиц.',
+    photo: '/team/gataullin.jpg',
+    fullBio: 'Специализация: Банкротство юридических и физических лиц.'
+  }
+];
+
 export const Home: React.FC = () => {
+  const [selectedLawyer, setSelectedLawyer] = useState<Lawyer | null>(null);
+
   return (
     <div className="animate-fade-in font-sans text-stone-900">
       
@@ -295,121 +375,31 @@ export const Home: React.FC = () => {
         {/* Carousel Container */}
         <div className="relative">
           <div className="flex gap-6 overflow-x-auto pb-8 px-4 sm:px-6 lg:px-8 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-            
-            {/* Lawyer 1 */}
-            <div className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a] flex-shrink-0 w-[300px] snap-start">
-               <div className="mb-6 overflow-hidden aspect-[3/4] w-full bg-stone-800">
+            {lawyers.map((lawyer) => (
+              <div key={lawyer.id} className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a] flex-shrink-0 w-[300px] snap-start">
+                <div className="mb-6 overflow-hidden aspect-[3/4] w-full bg-stone-800">
                   <img 
-                    src="/team/muratova.jpg" 
-                    alt="МУРАТОВА НАДЕЖДА ДМИТРИЕВНА" 
+                    src={lawyer.photo} 
+                    alt={lawyer.name} 
                     className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700"
-                    onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x800/333333/c6964a?text=Н.Д.'; }}
+                    onError={(e) => { e.currentTarget.src = `https://placehold.co/600x800/333333/c6964a?text=${lawyer.name.split(' ')[1]?.[0] || ''}${lawyer.name.split(' ')[2]?.[0] || ''}`; }}
                   />
-               </div>
-               <div className="text-left">
-                  <h3 className="font-serif text-base font-bold uppercase mb-2 text-[#c6964a]">МУРАТОВА НАДЕЖДА ДМИТРИЕВНА</h3>
-                  <p className="text-xs font-bold text-stone-400 mb-4">Адвокат, Управляющий партнер</p>
-                  <p className="text-xs text-stone-400 leading-relaxed border-t border-stone-700 pt-4">
-                    Специализация: Семейные споры, защита прав юридических лиц при проведении проверок государственными (муниципальными) органами, дела об административных правонарушениях.
+                </div>
+                <div className="text-left">
+                  <h3 className="font-serif text-base font-bold uppercase mb-2 text-[#c6964a]">{lawyer.name}</h3>
+                  <p className="text-xs font-bold text-stone-400 mb-4">{lawyer.position}</p>
+                  <p className="text-xs text-stone-400 leading-relaxed border-t border-stone-700 pt-4 line-clamp-3">
+                    Специализация: {lawyer.specialization}
                   </p>
-               </div>
-            </div>
-
-            {/* Lawyer 2 */}
-            <div className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a] flex-shrink-0 w-[300px] snap-start">
-               <div className="mb-6 overflow-hidden aspect-[3/4] w-full bg-stone-800">
-                  <img 
-                    src="/team/hasanshina.jpg" 
-                    alt="ХАСАНШИНА РЕГИНА ГАЙФУЛОВНА" 
-                    className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700"
-                    onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x800/333333/c6964a?text=Р.Г.'; }}
-                  />
-               </div>
-               <div className="text-left">
-                  <h3 className="font-serif text-base font-bold uppercase mb-2 text-[#c6964a]">ХАСАНШИНА РЕГИНА ГАЙФУЛОВНА</h3>
-                  <p className="text-xs font-bold text-stone-400 mb-4">Адвокат, Партнер</p>
-                  <p className="text-xs text-stone-400 leading-relaxed border-t border-stone-700 pt-4">
-                    Специализация: Земельные споры, наследственные споры, защита прав потерпевших.
-                  </p>
-               </div>
-            </div>
-
-            {/* Lawyer 3 */}
-            <div className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a] flex-shrink-0 w-[300px] snap-start">
-               <div className="mb-6 overflow-hidden aspect-[3/4] w-full bg-stone-800">
-                  <img 
-                    src="/team/husnullina.jpg" 
-                    alt="ХУСНУЛЛИНА ДИАНА ФАИЛЕВНА" 
-                    className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700"
-                    onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x800/333333/c6964a?text=Д.Ф.'; }}
-                  />
-               </div>
-               <div className="text-left">
-                  <h3 className="font-serif text-base font-bold uppercase mb-2 text-[#c6964a]">ХУСНУЛЛИНА ДИАНА ФАИЛЕВНА</h3>
-                  <p className="text-xs font-bold text-stone-400 mb-4">Адвокат, Партнер</p>
-                  <p className="text-xs text-stone-400 leading-relaxed border-t border-stone-700 pt-4">
-                    Специализация: Семейные споры, жилищные споры, споры о защите прав потребителей, споры с кредитными организациями.
-                  </p>
-               </div>
-            </div>
-
-            {/* Lawyer 4 */}
-            <div className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a] flex-shrink-0 w-[300px] snap-start">
-               <div className="mb-6 overflow-hidden aspect-[3/4] w-full bg-stone-800">
-                  <img 
-                    src="/team/zhelezova.jpg" 
-                    alt="ЖЕЛЕЗОВА ВЛАДА ВЛАДИМИРОВНА" 
-                    className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700"
-                    onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x800/333333/c6964a?text=В.В.'; }}
-                  />
-               </div>
-               <div className="text-left">
-                  <h3 className="font-serif text-base font-bold uppercase mb-2 text-[#c6964a]">ЖЕЛЕЗОВА ВЛАДА ВЛАДИМИРОВНА</h3>
-                  <p className="text-xs font-bold text-stone-400 mb-4">Адвокат, Партнер</p>
-                  <p className="text-xs text-stone-400 leading-relaxed border-t border-stone-700 pt-4">
-                    Специализация: Арбитражные споры, возникающие из договоров аренды, подряда, поставки, лизинга, страховые споры, трудовые споры.
-                  </p>
-               </div>
-            </div>
-
-            {/* Lawyer 5 */}
-            <div className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a] flex-shrink-0 w-[300px] snap-start">
-               <div className="mb-6 overflow-hidden aspect-[3/4] w-full bg-stone-800">
-                  <img 
-                    src="/team/sverigina.jpg" 
-                    alt="СВЕРИГИНА РЭНАТА РАШИТОВНА" 
-                    className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700"
-                    onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x800/333333/c6964a?text=Р.Р.'; }}
-                  />
-               </div>
-               <div className="text-left">
-                  <h3 className="font-serif text-base font-bold uppercase mb-2 text-[#c6964a]">СВЕРИГИНА РЭНАТА РАШИТОВНА</h3>
-                  <p className="text-xs font-bold text-stone-400 mb-4">Адвокат, Партнер</p>
-                  <p className="text-xs text-stone-400 leading-relaxed border-t border-stone-700 pt-4">
-                    Специализация: Налоговые споры.
-                  </p>
-               </div>
-            </div>
-
-            {/* Lawyer 6 */}
-            <div className="group bg-[#222] p-6 hover:bg-[#2a2a2a] transition-colors border-t-2 border-transparent hover:border-[#c6964a] flex-shrink-0 w-[300px] snap-start">
-               <div className="mb-6 overflow-hidden aspect-[3/4] w-full bg-stone-800">
-                  <img 
-                    src="/team/gataullin.jpg" 
-                    alt="ГАТАУЛЛИН АЙРАТ МАРАТОВИЧ" 
-                    className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700"
-                    onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x800/333333/c6964a?text=А.М.'; }}
-                  />
-               </div>
-               <div className="text-left">
-                  <h3 className="font-serif text-base font-bold uppercase mb-2 text-[#c6964a]">ГАТАУЛЛИН АЙРАТ МАРАТОВИЧ</h3>
-                  <p className="text-xs font-bold text-stone-400 mb-4">Адвокат, Партнер</p>
-                  <p className="text-xs text-stone-400 leading-relaxed border-t border-stone-700 pt-4">
-                    Специализация: Банкротство юридических и физических лиц.
-                  </p>
-               </div>
-            </div>
-
+                  <button 
+                    onClick={() => setSelectedLawyer(lawyer)}
+                    className="mt-4 text-xs font-bold text-[#c6964a] hover:text-white transition-colors uppercase tracking-wider"
+                  >
+                    Подробнее →
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
           
           {/* Scroll hint */}
@@ -426,6 +416,53 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Lawyer Modal */}
+      {selectedLawyer && (
+        <div 
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedLawyer(null)}
+        >
+          <div 
+            className="relative bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button 
+              onClick={() => setSelectedLawyer(null)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 bg-stone-900 text-white rounded-full flex items-center justify-center hover:bg-[#c6964a] transition-colors"
+            >
+              <X size={20} />
+            </button>
+            
+            <div className="grid md:grid-cols-3 gap-0">
+              {/* Photo */}
+              <div className="md:col-span-1 bg-stone-100">
+                <img 
+                  src={selectedLawyer.photo} 
+                  alt={selectedLawyer.name}
+                  className="w-full h-full object-cover min-h-[300px]"
+                  onError={(e) => { e.currentTarget.src = `https://placehold.co/600x800/e5e5e5/c6964a?text=${selectedLawyer.name.split(' ')[1]?.[0] || ''}${selectedLawyer.name.split(' ')[2]?.[0] || ''}`; }}
+                />
+              </div>
+              
+              {/* Content */}
+              <div className="md:col-span-2 p-8">
+                <h2 className="font-serif text-2xl md:text-3xl text-stone-900 mb-2">{selectedLawyer.name}</h2>
+                <p className="text-[#c6964a] font-bold text-sm uppercase tracking-wider mb-6">{selectedLawyer.position}</p>
+                
+                <div className="prose prose-sm max-w-none">
+                  {selectedLawyer.fullBio.split('\n\n').map((paragraph, idx) => (
+                    <p key={idx} className="text-stone-600 leading-relaxed mb-4">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );
