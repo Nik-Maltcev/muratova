@@ -136,7 +136,7 @@ export const Publications: React.FC = () => {
                 className="group bg-white border border-stone-200 hover:border-[#c6964a] hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 {/* Cover Image */}
-                <div className="relative h-48 bg-gradient-to-br from-stone-100 to-stone-200 overflow-hidden">
+                <div className="relative h-72 bg-gradient-to-br from-stone-100 to-stone-200 overflow-hidden">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <FileText size={48} className="text-stone-300" />
                   </div>
@@ -144,7 +144,7 @@ export const Publications: React.FC = () => {
                     <img 
                       src={pub.coverUrl} 
                       alt={pub.title}
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-contain bg-white"
                       onError={(e) => (e.currentTarget.style.display = 'none')}
                     />
                   )}
