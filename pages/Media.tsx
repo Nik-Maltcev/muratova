@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Play, Calendar } from 'lucide-react';
+import { ExternalLink, Calendar } from 'lucide-react';
 
 interface MediaItem {
   id: string;
@@ -67,15 +67,13 @@ export const Media: React.FC = () => {
                 {item.title}
               </h2>
 
-              {/* Image Placeholder */}
-              <div className="relative mb-8 bg-stone-100 rounded-lg overflow-hidden aspect-video flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-stone-800 to-stone-900"></div>
-                <div className="relative z-10 text-center">
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-[#c6964a] flex items-center justify-center cursor-pointer hover:bg-[#d4a85a] transition-colors">
-                    <Play size={32} className="text-white ml-1" />
-                  </div>
-                  <p className="text-white text-sm">Смотреть выпуск программы</p>
-                </div>
+              {/* Image */}
+              <div className="relative mb-8 rounded-lg overflow-hidden">
+                <img 
+                  src="/tnv-2024.jpg" 
+                  alt="Выпуск программы Татарстан без коррупции" 
+                  className="w-full h-auto object-cover rounded-lg shadow-lg"
+                />
               </div>
 
               {/* Description */}
