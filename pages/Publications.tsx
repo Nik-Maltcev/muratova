@@ -11,43 +11,38 @@ interface Publication {
   pdfLink: string;
 }
 
-// Пример данных - замените на реальные ссылки Google Drive
 const publications: Publication[] = [
   {
     id: '1',
-    title: 'Особенности применения Гаагской конвенции 1980 года',
-    journal: 'Вестник международного права',
+    title: 'Адвокат Татарстана №1 (158)',
+    journal: 'Адвокат Татарстана',
     year: '2023',
-    description: 'Анализ ключевых кейсов и процессуальных особенностей возвращения детей при незаконном перемещении.',
-    coverUrl: '/covers/pub-1.jpg',
-    pdfLink: 'https://drive.google.com/file/d/XXXXX/preview'
+    description: 'Декабрь 2022, январь, февраль 2023',
+    pdfLink: 'https://drive.google.com/file/d/1tQpE-8XLqGtR7jrTBFK9sfB3Zq57LK0m/preview'
   },
   {
     id: '2',
-    title: 'Субсидиарная ответственность контролирующих лиц',
-    journal: 'Корпоративный Юрист',
+    title: 'Адвокат Татарстана №2 (159)',
+    journal: 'Адвокат Татарстана',
     year: '2023',
-    description: 'Обзор изменений в законодательстве и судебной практике за последние 5 лет.',
-    coverUrl: '/covers/pub-2.jpg',
-    pdfLink: 'https://drive.google.com/file/d/XXXXX/preview'
+    description: 'Март, апрель, май 2023',
+    pdfLink: 'https://drive.google.com/file/d/1Q0XjO61ZKjZrFpK4aI63au6UzRfiOrcD/preview'
   },
   {
     id: '3',
-    title: 'Медиация в семейных спорах',
-    journal: 'Сборник ФПА',
-    year: '2022',
-    description: 'Эффективность медиативных соглашений в сравнении с судебными решениями.',
-    coverUrl: '/covers/pub-3.jpg',
-    pdfLink: 'https://drive.google.com/file/d/XXXXX/preview'
+    title: 'Адвокат Татарстана №3 (160)',
+    journal: 'Адвокат Татарстана',
+    year: '2023',
+    description: 'Июнь, июль, август 2023',
+    pdfLink: 'https://drive.google.com/file/d/1KJ3po-_3S3uklBdW4qWZi2OlkYxg72rc/preview'
   },
   {
     id: '4',
-    title: 'Защита интеллектуальной собственности',
-    journal: 'ИС: Авторское право',
-    year: '2022',
-    description: 'Проблематика фиксации нарушений в сети Интернет.',
-    coverUrl: '/covers/pub-4.jpg',
-    pdfLink: 'https://drive.google.com/file/d/XXXXX/preview'
+    title: 'Адвокат Татарстана №4 (161)',
+    journal: 'Адвокат Татарстана',
+    year: '2023',
+    description: 'Сентябрь, октябрь, ноябрь 2023',
+    pdfLink: 'https://drive.google.com/file/d/17WJ0FK6ITE_0Yd3Kx5FzS721W97clQ5U/preview'
   }
 ];
 
