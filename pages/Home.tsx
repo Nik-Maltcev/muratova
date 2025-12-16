@@ -334,9 +334,9 @@ export const Home: React.FC = () => {
                 </p>
                 <div className="mt-2 text-xs text-[#d2ab66]">
                     <p className="mb-1">Legal Summer Party 2023:</p>
-                    <a href="#" className="block mb-2 hover:underline">https://disk.yandex.ru/d/wXOSN_dgFOgUAw</a>
+                    <a href="https://disk.yandex.ru/d/wXOSN_dgFOgUAw" target="_blank" rel="noopener noreferrer" className="block mb-2 hover:underline">https://disk.yandex.ru/d/wXOSN_dgFOgUAw</a>
                     <p className="mb-1">Парусная регата 2022:</p>
-                    <a href="#" className="block hover:underline">https://disk.yandex.ru/d/Ib6952Drq0vTuw</a>
+                    <a href="https://disk.yandex.ru/d/Ib6952Drq0vTuw" target="_blank" rel="noopener noreferrer" className="block hover:underline">https://disk.yandex.ru/d/Ib6952Drq0vTuw</a>
                 </div>
               </div>
             </div>
@@ -352,7 +352,7 @@ export const Home: React.FC = () => {
                 <p className="text-sm leading-relaxed text-stone-700">
                   Наши адвокаты имеют благодарности от руководства и клиентов Федеральной палаты адвокатов Российской Федерации и Адвокатской палаты Республики Татарстан за эффективную защиту прав в судах и иных государственных органах.
                 </p>
-                <a href="#" className="block mt-2 text-xs text-[#d2ab66] hover:underline">
+                <a href="https://disk.yandex.ru/d/kxvZSYB-NOwZYQ" target="_blank" rel="noopener noreferrer" className="block mt-2 text-xs text-[#d2ab66] hover:underline">
                   Посмотреть благодарности - https://disk.yandex.ru/d/kxvZSYB-NOwZYQ
                 </a>
               </div>
