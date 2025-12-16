@@ -169,7 +169,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                <p className="leading-relaxed text-stone-600 mb-2">
                  Воронцово поле, д. 12,<br/> стр. 3, оф.104
                </p>
-               <a href="#" className="text-[#c6964a] text-xs uppercase tracking-wider hover:underline block mt-2">Посмотреть на карте →</a>
+
             </div>
 
             {/* Column 4 - Requisites */}
