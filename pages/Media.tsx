@@ -109,7 +109,7 @@ export const Media: React.FC = () => {
             По вопросам организации интервью, комментариев и участия адвокатов бюро в мероприятиях, пожалуйста, свяжитесь с нами.
           </p>
           <a 
-            href="mailto:muratova-partners@mail.ru" 
+            href="mailto:advokatmuratova@gmail.com" 
             className="inline-block px-8 py-3 bg-stone-900 text-white font-medium hover:bg-[#c6964a] transition-colors"
           >
             Связаться с пресс-службой
