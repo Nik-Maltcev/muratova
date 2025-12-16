@@ -527,19 +527,19 @@ export const Home: React.FC = () => {
           </div>
           <h2 className="font-serif text-4xl md:text-5xl text-stone-900 mb-12">КОНТАКТЫ</h2>
           
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Office 1 */}
-            <div className="bg-white p-6 border border-stone-200 rounded-lg">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="p-3 bg-stone-100 text-[#c6964a] rounded">
-                  <MapPin size={24} />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Office Kazan 1 */}
+            <div className="bg-white p-5 border border-stone-200 rounded-lg">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="p-2 bg-stone-100 text-[#c6964a] rounded">
+                  <MapPin size={20} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-stone-900 text-lg mb-1">Офис в Казани (основной)</h3>
-                  <p className="text-stone-600 text-sm">ул. Спартаковская, д. 84, корп. 1, пом. 1003<br/>420049, Республика Татарстан</p>
+                  <h3 className="font-bold text-stone-900 mb-1">Казань (основной)</h3>
+                  <p className="text-stone-600 text-xs">ул. Спартаковская, д. 84, корп. 1, пом. 1003<br/>420049, Республика Татарстан</p>
                 </div>
               </div>
-              <div className="h-[250px] bg-stone-100 rounded overflow-hidden">
+              <div className="h-[200px] bg-stone-100 rounded overflow-hidden">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.287870792575!2d49.1477512!3d55.770872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415eadaf8d4863d5%3A0x32c672cadfc234e4!2z0KHQv9Cw0YDRgtCw0LrQvtCy0YHQutCw0Y8g0YPQuy4sIDg0INC6Miwg0JrQsNC30LDQvdGMLCDQoNC10YHQvy4g0KLQsNGC0LDRgNGB0YLQsNC9LCDQoNC-0YHRgdC40Y8sIDQyMDA0OQ!5e0!3m2!1sru!2sde!4v1764267530173!5m2!1sru!2sde"
                   width="100%" 
@@ -553,18 +553,18 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* Office 2 */}
-            <div className="bg-white p-6 border border-stone-200 rounded-lg">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="p-3 bg-stone-100 text-[#c6964a] rounded">
-                  <MapPin size={24} />
+            {/* Office Kazan 2 */}
+            <div className="bg-white p-5 border border-stone-200 rounded-lg">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="p-2 bg-stone-100 text-[#c6964a] rounded">
+                  <MapPin size={20} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-stone-900 text-lg mb-1">Дополнительный офис в Казани</h3>
-                  <p className="text-stone-600 text-sm">ул. Калинина, д. 32<br/>420043, Республика Татарстан</p>
+                  <h3 className="font-bold text-stone-900 mb-1">Казань (доп.)</h3>
+                  <p className="text-stone-600 text-xs">ул. Калинина, д. 32<br/>420043, Республика Татарстан</p>
                 </div>
               </div>
-              <div className="h-[250px] bg-stone-100 rounded overflow-hidden">
+              <div className="h-[200px] bg-stone-100 rounded overflow-hidden">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.6305875669327!2d49.1450477!3d55.782287499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415ead0a0c3302b1%3A0x123ed16b1a601a74!2z0YPQuy4g0JrQsNC70LjQvdC40L3QsCwgMzIsINCa0LDQt9Cw0L3RjCwg0KDQtdGB0L8uINCi0LDRgtCw0YDRgdGC0LDQvSwg0KDQvtGB0YHQuNGPLCA0MjAwNDM!5e0!3m2!1sru!2sde!4v1764267614038!5m2!1sru!2sde"
                   width="100%" 
@@ -574,6 +574,31 @@ export const Home: React.FC = () => {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Офис на Калинина"
+                />
+              </div>
+            </div>
+
+            {/* Office Moscow */}
+            <div className="bg-white p-5 border border-stone-200 rounded-lg">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="p-2 bg-stone-100 text-[#c6964a] rounded">
+                  <MapPin size={20} />
+                </div>
+                <div>
+                  <h3 className="font-bold text-stone-900 mb-1">Москва</h3>
+                  <p className="text-stone-600 text-xs">ул. Воронцово Поле, д. 12, стр. 3<br/>105064, Москва</p>
+                </div>
+              </div>
+              <div className="h-[200px] bg-stone-100 rounded overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2245.2852763446276!2d37.6520061!3d55.7535464!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54af2e0603e4f%3A0x2487514cb409e330!2z0YPQuy4g0JLQvtGA0L7QvdGG0L7QstC-INCf0L7Qu9C1LCAxMiDRgdGC0YDQvtC10L3QuNC1IDMsINCc0L7RgdC60LLQsCwg0KDQvtGB0YHQuNGPLCAxMDUwNjQ!5e0!3m2!1sru!2sus!4v1765878867681!5m2!1sru!2sus"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Офис в Москве"
                 />
               </div>
             </div>
