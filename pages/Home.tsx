@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { ArrowRight, ArrowLeft, Briefcase, Users, Scale, Globe, FileText, Landmark, GraduationCap, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Briefcase, Users, Scale, Globe, FileText, Landmark, GraduationCap, X, ChevronLeft, ChevronRight, MapPin, Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface Lawyer {
@@ -514,6 +514,85 @@ export const Home: React.FC = () => {
             <Link to="/contacts" className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#c6964a] hover:text-white transition-colors">
               Контакты <ArrowRight size={16}/>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACTS SECTION */}
+      <section className="py-24 bg-stone-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-0.5 w-12 bg-[#c6964a]"></div>
+            <span className="text-sm font-bold tracking-[0.2em] text-stone-500 uppercase">Связаться с нами</span>
+          </div>
+          <h2 className="font-serif text-4xl md:text-5xl text-stone-900 mb-12">КОНТАКТЫ</h2>
+          
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Office 1 */}
+            <div className="bg-white p-6 border border-stone-200 rounded-lg">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="p-3 bg-stone-100 text-[#c6964a] rounded">
+                  <MapPin size={24} />
+                </div>
+                <div>
+                  <h3 className="font-bold text-stone-900 text-lg mb-1">Офис в Казани (основной)</h3>
+                  <p className="text-stone-600 text-sm">ул. Спартаковская, д. 84, корп. 1, пом. 1003<br/>420049, Республика Татарстан</p>
+                </div>
+              </div>
+              <div className="h-[250px] bg-stone-100 rounded overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.287870792575!2d49.1477512!3d55.770872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415eadaf8d4863d5%3A0x32c672cadfc234e4!2z0KHQv9Cw0YDRgtCw0LrQvtCy0YHQutCw0Y8g0YPQuy4sIDg0INC6Miwg0JrQsNC30LDQvdGMLCDQoNC10YHQvy4g0KLQsNGC0LDRgNGB0YLQsNC9LCDQoNC-0YHRgdC40Y8sIDQyMDA0OQ!5e0!3m2!1sru!2sde!4v1764267530173!5m2!1sru!2sde"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Офис на Спартаковской"
+                />
+              </div>
+            </div>
+
+            {/* Office 2 */}
+            <div className="bg-white p-6 border border-stone-200 rounded-lg">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="p-3 bg-stone-100 text-[#c6964a] rounded">
+                  <MapPin size={24} />
+                </div>
+                <div>
+                  <h3 className="font-bold text-stone-900 text-lg mb-1">Дополнительный офис в Казани</h3>
+                  <p className="text-stone-600 text-sm">ул. Калинина, д. 32<br/>420043, Республика Татарстан</p>
+                </div>
+              </div>
+              <div className="h-[250px] bg-stone-100 rounded overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.6305875669327!2d49.1450477!3d55.782287499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415ead0a0c3302b1%3A0x123ed16b1a601a74!2z0YPQuy4g0JrQsNC70LjQvdC40L3QsCwgMzIsINCa0LDQt9Cw0L3RjCwg0KDQtdGB0L8uINCi0LDRgtCw0YDRgdGC0LDQvSwg0KDQvtGB0YHQuNGPLCA0MjAwNDM!5e0!3m2!1sru!2sde!4v1764267614038!5m2!1sru!2sde"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Офис на Калинина"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Info */}
+          <div className="mt-8 grid md:grid-cols-2 gap-6">
+            <div className="flex items-center gap-4 bg-white p-4 border border-stone-200 rounded-lg">
+              <div className="p-3 bg-stone-100 text-[#c6964a] rounded">
+                <Phone size={20} />
+              </div>
+              <a href="tel:+79179105599" className="text-stone-700 hover:text-[#c6964a] transition-colors font-medium">+7 (917) 910-55-99</a>
+            </div>
+            <div className="flex items-center gap-4 bg-white p-4 border border-stone-200 rounded-lg">
+              <div className="p-3 bg-stone-100 text-[#c6964a] rounded">
+                <Mail size={20} />
+              </div>
+              <a href="mailto:advokatmuratova@gmail.com" className="text-stone-700 hover:text-[#c6964a] transition-colors font-medium">advokatmuratova@gmail.com</a>
+            </div>
           </div>
         </div>
       </section>
