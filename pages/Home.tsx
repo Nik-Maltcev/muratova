@@ -314,9 +314,9 @@ export const Home: React.FC = () => {
                   Адвокаты бюро участвуют в социально значимых проектах pro bono: проект Федеральной палаты адвокатов России «Адвокатура в школе»; проект Федерального союза адвокатов России «Женское право».
                 </p>
                 <div className="mt-2 space-y-1">
-                  <a href="#" className="block text-xs text-[#d2ab66] hover:underline break-all">https://fparf.ru/for-citizens/education/education-advocacy-school/</a>
-                  <a href="#" className="block text-xs text-[#d2ab66] hover:underline break-all">http://адвокатурашколе.рф/</a>
-                  <a href="#" className="block text-xs text-[#d2ab66] hover:underline break-all">https://fparf.ru/for-citizens/education/the-project-of-the-federal-union-of-lawyers-of-russia-women-s-right/</a>
+                  <a href="https://fparf.ru/for-citizens/education/education-advocacy-school/" target="_blank" rel="noopener noreferrer" className="block text-xs text-[#d2ab66] hover:underline break-all">https://fparf.ru/for-citizens/education/education-advocacy-school/</a>
+                  <a href="http://адвокатурашколе.рф/" target="_blank" rel="noopener noreferrer" className="block text-xs text-[#d2ab66] hover:underline break-all">http://адвокатурашколе.рф/</a>
+                  <a href="https://fparf.ru/for-citizens/education/the-project-of-the-federal-union-of-lawyers-of-russia-women-s-right/" target="_blank" rel="noopener noreferrer" className="block text-xs text-[#d2ab66] hover:underline break-all">https://fparf.ru/for-citizens/education/the-project-of-the-federal-union-of-lawyers-of-russia-women-s-right/</a>
                 </div>
               </div>
             </div>
