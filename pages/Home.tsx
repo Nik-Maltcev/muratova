@@ -200,18 +200,17 @@ export const Home: React.FC = () => {
             
             {/* Image Content */}
             <div className="lg:col-span-6 order-1 lg:order-2 flex justify-center lg:justify-end relative">
-               <div className="relative w-full max-w-md lg:max-w-full flex justify-center">
-                 {/* Decorative Frame - Adjusted to be subtle behind the subject */}
-                 <div className="absolute top-10 right-10 w-full h-full border-[10px] border-[#fcf9f2] -z-10 hidden md:block rounded-full opacity-50"></div>
-                 
-                 <img 
-                  src="/muratova-hero.png" 
-                  alt="Муратова Надежда Дмитриевна" 
-                  className="relative z-10 w-full max-w-[400px] lg:max-w-[500px] object-contain h-auto"
-                  style={{ 
-                    filter: "drop-shadow(0 20px 30px rgba(0,0,0,0.05))" 
-                  }}
-                />
+               <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px]">
+                 {/* Circle with photo inside */}
+                 <div className="absolute inset-0 rounded-full bg-[#f5efe6] overflow-hidden">
+                   <img 
+                    src="/muratova-hero.png" 
+                    alt="Муратова Надежда Дмитриевна" 
+                    className="w-full h-full object-cover object-top scale-110"
+                  />
+                 </div>
+                 {/* Decorative ring */}
+                 <div className="absolute -inset-3 rounded-full border-2 border-[#c6964a]/20"></div>
                </div>
             </div>
           </div>
