@@ -1,15 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    window.scrollTo(0, 0);
+    // Handle hash scrolling
+    if (location.hash) {
+      setTimeout(() => {
+        const element = document.getElementById(location.hash.slice(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, [location]);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (path.includes('#')) {
+      e.preventDefault();
+      const [basePath, hash] = path.split('#');
+      if (location.pathname === basePath || (basePath === '/' && location.pathname === '/')) {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        navigate(path);
+      }
+      setIsMobileMenuOpen(false);
+    }
+  };
 
   const navLinks = [
     { name: 'О Бюро', path: '/' },
@@ -45,6 +72,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 <Link
                   key={link.path}
                   to={link.path}
+                  onClick={(e) => handleNavClick(e, link.path)}
                   className={`text-[11px] font-bold tracking-[0.15em] hover:text-[#c6964a] transition-colors uppercase ${
                     location.pathname === link.path ? 'text-[#c6964a]' : 'text-stone-900'
                   }`}
@@ -85,7 +113,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                   className={`text-sm font-bold uppercase tracking-widest ${
                     location.pathname === link.path ? 'text-[#c6964a]' : 'text-stone-900'
                   }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.path)}
                 >
                   {link.name}
                 </Link>
