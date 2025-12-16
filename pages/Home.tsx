@@ -200,17 +200,17 @@ export const Home: React.FC = () => {
             
             {/* Image Content */}
             <div className="lg:col-span-6 order-1 lg:order-2 flex justify-center lg:justify-end relative">
-               <div className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px]">
+               <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px] lg:w-[480px] lg:h-[480px]">
                  {/* Circle with photo inside */}
                  <div className="absolute inset-0 rounded-full bg-[#f5efe6] overflow-hidden">
                    <img 
                     src="/muratova-hero.png" 
                     alt="Муратова Надежда Дмитриевна" 
-                    className="w-full h-full object-cover object-top scale-110"
+                    className="w-full h-full object-cover object-center scale-125 translate-y-4"
                   />
                  </div>
                  {/* Decorative ring */}
-                 <div className="absolute -inset-3 rounded-full border-2 border-[#c6964a]/20"></div>
+                 <div className="absolute -inset-2 sm:-inset-3 rounded-full border border-[#c6964a]/30 sm:border-2 sm:border-[#c6964a]/20"></div>
                </div>
             </div>
           </div>
