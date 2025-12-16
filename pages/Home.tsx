@@ -192,9 +192,9 @@ export const Home: React.FC = () => {
                 <Link to="/contacts" className="inline-flex justify-center items-center px-8 py-4 bg-[#1a1a1a] text-white text-sm font-bold uppercase tracking-widest hover:bg-[#c6964a] transition-colors">
                   Связаться с нами
                 </Link>
-                <Link to="/practices" className="inline-flex justify-center items-center px-8 py-4 border border-[#1a1a1a] text-[#1a1a1a] text-sm font-bold uppercase tracking-widest hover:bg-stone-50 transition-colors">
+                <a href="#practices" className="inline-flex justify-center items-center px-8 py-4 border border-[#1a1a1a] text-[#1a1a1a] text-sm font-bold uppercase tracking-widest hover:bg-stone-50 transition-colors">
                   Наши практики
-                </Link>
+                </a>
               </div>
             </div>
             
@@ -363,7 +363,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* PRACTICES SECTION */}
-      <section className="py-24 bg-white">
+      <section id="practices" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <h2 className="font-serif text-4xl text-stone-900 leading-tight">
