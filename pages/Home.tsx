@@ -443,7 +443,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* TEAM SECTION - Carousel */}
-      <section className="py-24 bg-[#1a1a1a] text-white overflow-hidden">
+      <section id="team" className="py-24 bg-[#1a1a1a] text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <h2 className="font-serif text-4xl text-white leading-tight">

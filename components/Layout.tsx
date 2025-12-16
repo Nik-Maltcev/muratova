@@ -13,7 +13,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
   const navLinks = [
     { name: 'О Бюро', path: '/' },
-    { name: 'Команда', path: '/contacts' }, // Using contacts for team momentarily or scroll
+    { name: 'Команда', path: '/#team' },
     { name: 'Публикации', path: '/publications' },
     { name: 'Статьи', path: '/articles' },
     { name: 'СМИ о нас', path: '/media' },
