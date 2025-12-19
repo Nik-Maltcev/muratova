@@ -576,31 +576,6 @@ export const Home: React.FC = () => {
                 />
               </div>
             </div>
-
-            {/* Office Moscow */}
-            <div className="bg-white p-5 border border-stone-200 rounded-lg">
-              <div className="flex items-start gap-3 mb-4">
-                <div className="p-2 bg-stone-100 text-[#c6964a] rounded">
-                  <MapPin size={20} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-stone-900 mb-1">Москва</h3>
-                  <p className="text-stone-600 text-xs">ул. Воронцово Поле, д. 12, стр. 3<br/>105064, Москва</p>
-                </div>
-              </div>
-              <div className="h-[200px] bg-stone-100 rounded overflow-hidden">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2245.2852763446276!2d37.6520061!3d55.7535464!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54af2e0603e4f%3A0x2487514cb409e330!2z0YPQuy4g0JLQvtGA0L7QvdGG0L7QstC-INCf0L7Qu9C1LCAxMiDRgdGC0YDQvtC10L3QuNC1IDMsINCc0L7RgdC60LLQsCwg0KDQvtGB0YHQuNGPLCAxMDUwNjQ!5e0!3m2!1sru!2sus!4v1765878867681!5m2!1sru!2sus"
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen 
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Офис в Москве"
-                />
-              </div>
-            </div>
           </div>
 
           {/* Contact Info */}
