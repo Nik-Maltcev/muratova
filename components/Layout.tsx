@@ -56,12 +56,10 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             
             {/* Logo */}
             <Link to="/" className="flex flex-col items-center group shrink-0 py-2">
-              <img 
-                src="/logo.png" 
-                alt="Муратова и Партнёры" 
-                className="h-16 md:h-20 w-auto object-contain"
-              />
-              <div className="text-[10px] md:text-[11px] uppercase tracking-[0.3em] text-stone-900 leading-none font-medium text-center mt-2">
+              <div className="text-xs md:text-sm uppercase tracking-[0.2em] text-stone-500 leading-none font-medium text-center">
+                АДВОКАТСКОЕ БЮРО
+              </div>
+              <div className="text-base md:text-lg uppercase tracking-[0.15em] text-stone-900 leading-none font-bold text-center mt-1">
                 МУРАТОВА И ПАРТНЁРЫ
               </div>
             </Link>

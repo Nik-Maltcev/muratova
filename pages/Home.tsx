@@ -198,15 +198,15 @@ export const Home: React.FC = () => {
               </div>
             </div>
             
-            {/* Image Content */}
+            {/* Logo Content */}
             <div className="lg:col-span-6 order-1 lg:order-2 flex justify-center lg:justify-end relative">
                <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px] lg:w-[480px] lg:h-[480px]">
-                 {/* Circle with photo inside */}
-                 <div className="absolute inset-0 rounded-full bg-[#f5efe6] overflow-hidden">
+                 {/* Circle with logo inside */}
+                 <div className="absolute inset-0 rounded-full bg-[#f5efe6] overflow-hidden flex items-center justify-center">
                    <img 
-                    src="/muratova-hero.png" 
-                    alt="Муратова Надежда Дмитриевна" 
-                    className="w-full h-full object-cover object-center scale-125 translate-y-4"
+                    src="/logo.png" 
+                    alt="Муратова и Партнёры" 
+                    className="w-2/3 h-auto object-contain"
                   />
                  </div>
                  {/* Decorative ring */}

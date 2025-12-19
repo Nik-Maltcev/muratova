@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
 export const Contacts: React.FC = () => {
-  const [activeMap, setActiveMap] = useState<'kazan' | 'kazan2' | 'moscow'>('kazan');
+  const [activeMap, setActiveMap] = useState<'kazan' | 'kazan2'>('kazan');
 
   return (
     <div className="bg-white min-h-screen animate-fade-in">
@@ -50,20 +50,6 @@ export const Contacts: React.FC = () => {
                 <div>
                   <h3 className="font-bold text-stone-900 text-lg mb-1">Дополнительный офис в Казани</h3>
                   <p className="text-stone-600">ул. Калинина, д. 32<br/>420043, Республика Татарстан</p>
-                </div>
-              </div>
-
-              {/* Moscow Office */}
-              <div 
-                className={`flex items-start gap-4 p-6 border cursor-pointer transition-all ${activeMap === 'moscow' ? 'border-[#c6964a] bg-[#c6964a]/5' : 'border-stone-200 hover:border-[#c6964a]'}`}
-                onClick={() => setActiveMap('moscow')}
-              >
-                <div className="p-3 bg-stone-100 text-[#c6964a]">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-stone-900 text-lg mb-1">Офис в Москве</h3>
-                  <p className="text-stone-600">ул. Воронцово Поле, д. 12, стр. 3<br/>105064, Москва</p>
                 </div>
               </div>
 
@@ -115,18 +101,6 @@ export const Contacts: React.FC = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Офис на Калинина"
-              />
-            )}
-            {activeMap === 'moscow' && (
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2245.2852763446276!2d37.6520061!3d55.7535464!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54af2e0603e4f%3A0x2487514cb409e330!2z0YPQuy4g0JLQvtGA0L7QvdGG0L7QstC-INCf0L7Qu9C1LCAxMiDRgdGC0YDQvtC10L3QuNC1IDMsINCc0L7RgdC60LLQsCwg0KDQvtGB0YHQuNGPLCAxMDUwNjQ!5e0!3m2!1sru!2sus!4v1765878867681!5m2!1sru!2sus"
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen 
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Офис в Москве"
               />
             )}
           </div>

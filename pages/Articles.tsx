@@ -46,11 +46,11 @@ const articleSections: ArticleSection[] = [
     articles: [
       {
         title: 'О грани красоты и красоте в праве. Проект о 100 женщинах-юристках, чей образ во многом определяет лицо современного юридического сообщества.',
-        link: 'https://www.lawyer-magazine.ru/lady/nadezhda-muratova/'
+        link: 'https://www.lawyer-magazine.ru/lady/nadezhda-muratova'
       },
       {
         title: 'Скажи мне, кто твоя собака...',
-        link: 'https://www.lawyer-magazine.ru/life/skazhi-mne-kto-tvoja-sobaka/'
+        link: 'https://www.lawyer-magazine.ru/life/skazhi-mne-kto-tvoya-sobaka'
       }
     ]
   }
