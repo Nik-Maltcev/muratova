@@ -6,6 +6,7 @@ import { Publications } from './pages/Publications';
 import { Articles } from './pages/Articles';
 import { Media } from './pages/Media';
 import { Contacts } from './pages/Contacts';
+import { Events } from './pages/Events';
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
           <Route path="/articles" element={<Articles />} />
           <Route path="/media" element={<Media />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/events" element={<Events />} />
         </Routes>
       </Layout>
     </Router>
