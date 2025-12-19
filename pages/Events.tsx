@@ -60,50 +60,78 @@ export const Events: React.FC = () => {
       </div>
 
       {/* Events Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="space-y-20">
-          {events.map((event) => (
-            <article key={event.id} className="group">
-              <div className="flex items-center gap-3 mb-4">
-                <Calendar size={18} className="text-[#c6964a]" />
-                <span className="text-sm font-bold text-stone-500 uppercase tracking-wider">{event.date}</span>
-              </div>
-              <h2 className="font-serif text-3xl md:text-4xl text-stone-900 mb-4">
-                {event.title}
-              </h2>
-              <p className="text-stone-600 leading-relaxed mb-8 max-w-3xl text-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="space-y-24">
+          {events.map((event, eventIdx) => (
+            <article key={event.id}>
+              {/* Event Header with Main Photo */}
+              {event.photos && event.photos.length > 0 && (
+                <div className="relative mb-8 rounded-2xl overflow-hidden group">
+                  {/* Main large photo */}
+                  <div className="aspect-[21/9] md:aspect-[3/1]">
+                    <img 
+                      src={event.photos[0]} 
+                      alt={event.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  {/* Overlay with title */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-10">
+                    <div className="flex items-center gap-3 mb-3">
+                      <Calendar size={18} className="text-[#c6964a]" />
+                      <span className="text-sm font-bold text-white/80 uppercase tracking-wider">{event.date}</span>
+                    </div>
+                    <h2 className="font-serif text-3xl md:text-5xl text-white mb-3">
+                      {event.title}
+                    </h2>
+                    <p className="text-white/80 text-lg max-w-2xl hidden md:block">
+                      {event.description}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* Description for mobile */}
+              <p className="text-stone-600 leading-relaxed mb-6 text-lg md:hidden">
                 {event.description}
               </p>
               
-              {/* Photo Gallery */}
-              {event.photos && event.photos.length > 0 && (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                  {event.photos.map((photo, idx) => (
-                    <div key={idx} className="aspect-[4/3] overflow-hidden rounded-lg bg-stone-100">
+              {/* Additional Photos Grid */}
+              {event.photos && event.photos.length > 1 && (
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-8">
+                  {event.photos.slice(1).map((photo, idx) => (
+                    <div key={idx} className="aspect-square overflow-hidden rounded-xl bg-stone-100 group">
                       <img 
                         src={photo} 
-                        alt={`${event.title} - фото ${idx + 1}`}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        alt={`${event.title} - фото ${idx + 2}`}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
                   ))}
                 </div>
               )}
 
+              {/* Link Button */}
               {event.link && (
                 <a 
                   href={event.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-stone-900 text-white font-medium hover:bg-[#c6964a] transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-stone-900 text-white font-medium hover:bg-[#c6964a] transition-colors rounded-lg"
                 >
                   {event.linkText || 'Подробнее'}
-                  <ExternalLink size={16} />
+                  <ExternalLink size={18} />
                 </a>
               )}
               
               {/* Divider */}
-              <div className="mt-16 border-b border-stone-200"></div>
+              {eventIdx < events.length - 1 && (
+                <div className="mt-20 flex items-center gap-4">
+                  <div className="h-px bg-stone-200 flex-grow"></div>
+                  <div className="w-2 h-2 rounded-full bg-[#c6964a]"></div>
+                  <div className="h-px bg-stone-200 flex-grow"></div>
+                </div>
+              )}
             </article>
           ))}
         </div>
