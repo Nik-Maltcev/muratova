@@ -41,6 +41,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   const navLinks = [
     { name: 'О Бюро', path: '/' },
     { name: 'Команда', path: '/#team' },
+    { name: 'Мероприятия', path: '/events' },
     { name: 'Публикации', path: '/publications' },
     { name: 'Статьи', path: '/articles' },
     { name: 'СМИ о нас', path: '/media' },
@@ -161,16 +162,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                </p>
             </div>
 
-            {/* Column 3 - Moscow */}
-            <div>
-               <h4 className="font-bold uppercase tracking-widest mb-4 text-xs">МОСКВА</h4>
-               <p className="leading-relaxed text-stone-600 mb-2">
-                 Воронцово поле, д. 12,<br/> стр. 3, оф.104
-               </p>
-
-            </div>
-
-            {/* Column 4 - Requisites */}
+            {/* Column 3 - Requisites */}
             <div>
                <h4 className="font-bold uppercase tracking-widest mb-4 text-xs">Официальные реквизиты:</h4>
                <div className="text-xs text-stone-600 space-y-2">
