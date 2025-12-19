@@ -17,8 +17,6 @@ const events: EventItem[] = [
     title: 'Legal Summer Party 2023',
     date: '2023',
     description: 'Адвокаты бюро приняли участие во второй антиконференции Legal Summer Party 2023.',
-    link: 'https://disk.yandex.ru/d/wXOSN_dgFOgUAw',
-    linkText: 'Все фото на Яндекс.Диске',
     photos: [
       '/summer-party/legal summer1.jpg',
       '/summer-party/legal summer2.jpg',
@@ -30,8 +28,6 @@ const events: EventItem[] = [
     title: 'Парусная регата 2022',
     date: '2022',
     description: 'Команда адвокатов бюро участвовала в Парусной регате в г. Санкт-Петербург и заняла два первых места из трех номинаций.',
-    link: 'https://disk.yandex.ru/d/Ib6952Drq0vTuw',
-    linkText: 'Все фото на Яндекс.Диске',
     photos: [
       '/regata/Парусная регата 1.jpg',
       '/regata/Парусная регата 2.jpg',
@@ -96,11 +92,11 @@ export const Events: React.FC = () => {
                 {event.description}
               </p>
               
-              {/* Additional Photos Grid */}
+              {/* All Photos Grid */}
               {event.photos && event.photos.length > 1 && (
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-8">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                   {event.photos.slice(1).map((photo, idx) => (
-                    <div key={idx} className="aspect-square overflow-hidden rounded-xl bg-stone-100 group">
+                    <div key={idx} className="aspect-[4/3] overflow-hidden rounded-xl bg-stone-100 group">
                       <img 
                         src={photo} 
                         alt={`${event.title} - фото ${idx + 2}`}
@@ -110,18 +106,6 @@ export const Events: React.FC = () => {
                   ))}
                 </div>
               )}
-
-              {/* Link Button */}
-              {event.link && (
-                <a 
-                  href={event.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-stone-900 text-white font-medium hover:bg-[#c6964a] transition-colors rounded-lg"
-                >
-                  {event.linkText || 'Подробнее'}
-                  <ExternalLink size={18} />
-                </a>
               )}
               
               {/* Divider */}
