@@ -1,13 +1,11 @@
 import React from 'react';
-import { Calendar, ExternalLink } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 
 interface EventItem {
   id: string;
   title: string;
   date: string;
   description: string;
-  link?: string;
-  linkText?: string;
   photos?: string[];
 }
 
@@ -92,7 +90,7 @@ export const Events: React.FC = () => {
                 {event.description}
               </p>
               
-              {/* All Photos Grid */}
+              {/* All Photos Grid - показываем все фото кроме первого (оно на обложке) */}
               {event.photos && event.photos.length > 1 && (
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                   {event.photos.slice(1).map((photo, idx) => (
@@ -105,7 +103,6 @@ export const Events: React.FC = () => {
                     </div>
                   ))}
                 </div>
-              )}
               )}
               
               {/* Divider */}
