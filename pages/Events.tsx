@@ -90,14 +90,14 @@ export const Events: React.FC = () => {
                 {event.description}
               </p>
               
-              {/* All Photos Grid - показываем все фото кроме первого (оно на обложке) */}
-              {event.photos && event.photos.length > 1 && (
+              {/* All Photos Grid - показываем все фото */}
+              {event.photos && event.photos.length > 0 && (
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-                  {event.photos.slice(1).map((photo, idx) => (
+                  {event.photos.map((photo, idx) => (
                     <div key={idx} className="aspect-[4/3] overflow-hidden rounded-xl bg-stone-100 group">
                       <img 
                         src={photo} 
-                        alt={`${event.title} - фото ${idx + 2}`}
+                        alt={`${event.title} - фото ${idx + 1}`}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
