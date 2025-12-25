@@ -206,7 +206,7 @@ export const Home: React.FC = () => {
                    <img 
                     src="/logo.png" 
                     alt="Муратова и Партнёры" 
-                    className="w-2/3 h-auto object-contain"
+                    className="w-1/2 h-auto object-contain"
                   />
                  </div>
                  {/* Decorative ring */}
