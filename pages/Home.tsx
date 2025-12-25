@@ -331,12 +331,6 @@ export const Home: React.FC = () => {
                 <p className="text-sm leading-relaxed text-stone-700">
                   Особое внимание адвокаты бюро уделяют саморазвитию и профилактике профессионального выгорания. Так, в 2022 г. команда адвокатов бюро участвовала в Парусной регате в г. Санкт-Петербург и заняла два первых места из трех номинаций, а в 2023 году адвокаты бюро приняли участие во второй антиконференции Legal Summer Party 2023.
                 </p>
-                <div className="mt-2 text-xs text-[#d2ab66]">
-                    <p className="mb-1">Legal Summer Party 2023:</p>
-                    <a href="https://disk.yandex.ru/d/wXOSN_dgFOgUAw" target="_blank" rel="noopener noreferrer" className="block mb-2 hover:underline">https://disk.yandex.ru/d/wXOSN_dgFOgUAw</a>
-                    <p className="mb-1">Парусная регата 2022:</p>
-                    <a href="https://disk.yandex.ru/d/Ib6952Drq0vTuw" target="_blank" rel="noopener noreferrer" className="block hover:underline">https://disk.yandex.ru/d/Ib6952Drq0vTuw</a>
-                </div>
               </div>
             </div>
 
